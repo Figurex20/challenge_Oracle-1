@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./reset.css" />
+		<link rel="stylesheet" href="./styles.css" />
+		<title>Document</title>
+	</head>
+	<body class="container">
+		<!-- <main class="container"> -->
+		<section class="container-logo">
+			<img class="logo" src="./utils/Vector.svg" />
+		</section>
+
+		<section class="container-input">
+			<textarea
+				id="search"
+				name="frase"
+				placeholder="Ingrese el texto aqui"
+			></textarea>
+		</section>
+		<section class="container-span_parrafo">
+			<p class="precaucion">
+				<span class="span"><img src="./utils/informacion.svg" /></span>Solo
+				letras minúsculas y sin acentos
+			</p>
+		</section>
+
+		<section class="container-buttons">
+			<button id="button_encriptar">Encriptar</button>
+			<button id="button_desencriptar">Desencriptar</button>
+		</section>
+
+		<section class="container_result" id="container_result2">
+			<img class="muñeco" id="muñeco2" src="./utils/Muñeco.svg" />
+			<h1 class="mensaje_vacio" id="mensaje_vacio2">
+				Ningún mensaje fue encontrado
+			</h1>
+			<h2 class="mensaje_respuesta" id="mensaje_respuesta2">
+				Ingresa el texto que desees encriptar o desencriptar.
+			</h2>
+		</section>
+		<!-- </main> -->
+		<script src="./logic.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
+	</body>
+</html>
