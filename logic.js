@@ -74,7 +74,42 @@ const copyDiv = (e) => {
 };
 
 const encriptar = () => {
-	if (search.value != '') {
+	encrypted = Array.from(search.value);
+	let accents = ['é', 'í', 'á', 'ó', 'ú'];
+
+	let uppercase = encrypted.some((element) => {
+		if (
+			element === element.toUpperCase() &&
+			element != ' ' &&
+			element != '\n'
+		) {
+			console.log(element === element.toUpperCase());
+			return true;
+		}
+	});
+
+	let number = encrypted.some((element) => {
+		!isNaN(element);
+	});
+
+	let accent = encrypted.some((element) => {
+		for (let index = 0; index < accents.length; index++) {
+			if (element.toLowerCase() == accents[index]) {
+				console.log(element);
+
+				return true;
+			}
+		}
+	});
+
+	console.log(uppercase, number, accent);
+
+	if (
+		search.value != '' &&
+		uppercase === false &&
+		number === false &&
+		accent === false
+	) {
 		encrypted = Array.from(search.value);
 
 		for (let i = 0; i < encrypted.length; i++) {
@@ -93,8 +128,42 @@ const encriptar = () => {
 };
 
 const desencriptar = () => {
-	// encrypted = Array.from(search.value);
-	if (search.value != '') {
+	encrypted = Array.from(search.value);
+	let accents = ['é', 'í', 'á', 'ó', 'ú'];
+
+	let uppercase = encrypted.some((element) => {
+		if (
+			element === element.toUpperCase() &&
+			element != ' ' &&
+			element != '\n'
+		) {
+			console.log(element === element.toUpperCase());
+			return true;
+		}
+	});
+
+	let number = encrypted.some((element) => {
+		!isNaN(element);
+	});
+
+	let accent = encrypted.some((element) => {
+		for (let index = 0; index < accents.length; index++) {
+			if (element.toLowerCase() == accents[index]) {
+				console.log(element);
+
+				return true;
+			}
+		}
+	});
+
+	console.log(uppercase, number, accent);
+
+	if (
+		search.value != '' &&
+		uppercase === false &&
+		number === false &&
+		accent === false
+	) {
 		encrypted = search.value;
 
 		for (let i = 0; i < encrypted.length; i++) {
