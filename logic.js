@@ -129,6 +129,10 @@ const desencriptar = () => {
 /********************************************************************************************************************************/
 
 container_result.addEventListener('click', (e) => {
+	/*en esta parte lo que hago es que cuando hago click en el boton,
+	veo si el boton tiene una clase en especifico, si es asi, ejecuto la funcion*/
+	/* la 'e' trae toda la etiqueta por eso busco la clase*/
+
 	if (e.target.className === 'div-button_delete') {
 		deleteDiv(e);
 	}
