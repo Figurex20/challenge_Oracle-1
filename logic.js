@@ -75,52 +75,22 @@ const copyDiv = (e) => {
 
 const encriptar = () => {
 	encrypted = Array.from(search.value);
-	let accents = ['é', 'í', 'á', 'ó', 'ú'];
+	let validated = /^[a-z\s]+$/u;
 
-	let uppercase = encrypted.some((element) => {
-		if (
-			element === element.toUpperCase() &&
-			element != ' ' &&
-			element != '\n'
-		) {
-			console.log(element === element.toUpperCase());
-			return true;
-		}
-	});
-
-	let number = encrypted.some((element) => {
-		!isNaN(element);
-	});
-
-	let accent = encrypted.some((element) => {
-		for (let index = 0; index < accents.length; index++) {
-			if (element.toLowerCase() == accents[index]) {
-				console.log(element);
-
-				return true;
-			}
-		}
-	});
-
-	console.log(uppercase, number, accent);
-
-	if (
-		search.value != '' &&
-		uppercase === false &&
-		number === false &&
-		accent === false
-	) {
+	if (validated.test(search.value)) {
+		encrypted = search.value;
 		encrypted = Array.from(search.value);
 
 		for (let i = 0; i < encrypted.length; i++) {
 			for (let j = 0; j < vocales_cambiar.length; j++) {
 				if (encrypted[i] === vocales_cambiar[j]) {
 					encrypted[i] = cambio[j];
+					console.log(validated.test(search.value));
 				}
 			}
 		}
-
 		result = encrypted.join('');
+		console.log(encrypted);
 
 		see(result);
 	}
@@ -129,41 +99,10 @@ const encriptar = () => {
 
 const desencriptar = () => {
 	encrypted = Array.from(search.value);
-	let accents = ['é', 'í', 'á', 'ó', 'ú'];
 
-	let uppercase = encrypted.some((element) => {
-		if (
-			element === element.toUpperCase() &&
-			element != ' ' &&
-			element != '\n'
-		) {
-			console.log(element === element.toUpperCase());
-			return true;
-		}
-	});
-
-	let number = encrypted.some((element) => {
-		!isNaN(element);
-	});
-
-	let accent = encrypted.some((element) => {
-		for (let index = 0; index < accents.length; index++) {
-			if (element.toLowerCase() == accents[index]) {
-				console.log(element);
-
-				return true;
-			}
-		}
-	});
-
-	console.log(uppercase, number, accent);
-
-	if (
-		search.value != '' &&
-		uppercase === false &&
-		number === false &&
-		accent === false
-	) {
+	let validated = /^[a-z\s]+$/u;
+	console.log(validated.test(search.value));
+	if (validated.test(search.value)) {
 		encrypted = search.value;
 
 		for (let i = 0; i < encrypted.length; i++) {
